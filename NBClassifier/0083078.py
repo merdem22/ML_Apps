@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import math
 
 
 X_train = np.genfromtxt("20newsgroup_words_train.csv", delimiter = ",", dtype = int)
@@ -36,7 +35,7 @@ def estimate_prior_probabilities(y):
     return(class_priors)
 
 class_priors = estimate_prior_probabilities(y_train)
-#print(class_priors)
+print(class_priors)
 
 
 
@@ -67,7 +66,7 @@ def estimate_success_probabilities(X, y):
     return(P)
 
 P = estimate_success_probabilities(X_train, y_train)
-#print(P)
+print(P)
 
 
 
@@ -96,10 +95,10 @@ def calculate_score_values(X, P, class_priors):
     return(score_values)
 
 scores_train = calculate_score_values(X_train, P, class_priors)
-#print(scores_train)
+print(scores_train)
 
 scores_test = calculate_score_values(X_test, P, class_priors)
-#print(scores_test)
+print(scores_test)
 
 
 
