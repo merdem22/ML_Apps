@@ -66,7 +66,7 @@ def sigmoid(X, W, w0):
 # should return a numpy array with shape (N, K)
 def one_hot_encoding(y):
     # your implementation starts below
-    Y = np.zeros(len(y), 10)
+    Y = np.zeros((len(y), 10))
     for i in range(len(y)):
         Y[i, y[i] - 1] = 1
     # your implementation ends above
@@ -88,7 +88,8 @@ w0_initial = np.random.uniform(low = -0.001, high = 0.001, size = (1, K))
 # should return a numpy array with shape (D, K)
 def gradient_W(X, Y_truth, Y_predicted):
     # your implementation starts below
-    gradient = np.matmul(X.T, Y_predicted - Y_truth)
+    delta = (Y_predicted - Y_truth) * (Y_predicted * (1 - Y_predicted))
+    gradient = np.matmul(X.T, delta)
     # your implementation ends above
     return(gradient)
 
@@ -98,7 +99,8 @@ def gradient_W(X, Y_truth, Y_predicted):
 # should return a numpy array with shape (1, K)
 def gradient_w0(Y_truth, Y_predicted):
     # your implementation starts below
-    gradient = np.sum(Y_predicted - Y_truth, axis = 0)
+    delta = (Y_predicted - Y_truth) * (Y_predicted * (1 - Y_predicted))
+    gradient = np.sum(delta, axis = 0, keepdims=True)
     # your implementation ends above
     return(gradient)
 
@@ -116,7 +118,16 @@ def discrimination_by_regression(X_train, Y_train,
     w0 = w0_initial
         
     # your implementation starts below
-
+    objective_values = []
+    for iter in range(iteration_count):
+        Y_pred = sigmoid(X_train, W, w0) #get sigmoids
+        error = 0.5 * np.sum((Y_train - Y_pred)**2) #calculate error
+        objective_values.append(error)
+        #update params
+        gradW = gradient_W(X_train, Y_train, Y_pred)
+        gradw0 = gradient_w0(Y_train, Y_pred)
+        W = W - eta * gradW
+        w0 = w0 - eta * gradw0
     # your implementation ends above
     return(W, w0, objective_values)
 
@@ -135,14 +146,15 @@ plt.ylabel("Error")
 plt.show()
 fig.savefig("hw02_iterations.pdf", bbox_inches = "tight")
 
-'''
+
 
 # STEP 8
 # assuming that there are N data points
 # should return a numpy array with shape (N,)
 def calculate_predicted_class_labels(X, W, w0):
     # your implementation starts below
-    
+    pred = sigmoid(X, W, w0)
+    y_predicted = np.argmax(pred, axis=1) + 1 #argmax
     # your implementation ends above
     return(y_predicted)
 
@@ -159,7 +171,10 @@ print(y_hat_test)
 # should return a numpy array with shape (K, K)
 def calculate_confusion_matrix(y_truth, y_predicted):
     # your implementation starts below
-    
+    num_classes = np.max(y_truth)
+    confusion_matrix = np.zeros((num_classes, num_classes), dtype=int)
+    for true, pred in zip(y_truth, y_predicted):
+        confusion_matrix[true - 1, pred - 1] += 1
     # your implementation ends above
     return(confusion_matrix)
 
@@ -168,4 +183,3 @@ print(confusion_train)
 
 confusion_test = calculate_confusion_matrix(y_test, y_hat_test)
 print(confusion_test)
-'''
