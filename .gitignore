@@ -1,1 +1,3 @@
 RegressionDisc/fashionmnist_data_points.csv
+NaiveBayesClassifier/20newsgroup_words_test.csv
+NaiveBayesClassifier/20newsgroup_words_train.csv
