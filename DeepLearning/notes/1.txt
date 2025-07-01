@@ -1,0 +1,44 @@
+Deep learning uses multilayered neural networks trained with large data sets to solve complex information processing tasks.
+And has emerged as the most successful paradigm in the field of machine learning.
+
+Computer vision, speech recognition, natural language processing
+
+Healthcare, manufacturing, commerce, finance, science....
+
+Recently, massive neural networks known as large language models, comprising of the order of a trillion learnable params
+the first indications of general artificial intelligence.
+
+we should focus on the core ideas as the field is evolving rapidly, e.g. LLMs are advancing rapidly yet the underlying transformer architecture and attention mechanism have remained largely unchanged for the last five years.
+And many core principles of ML have been known for decades.
+
+A clear understanding of ML can be achieved only through the use of some level of maths.
+Specifically three areas of maths: probability theory, linear algebra and multivariate calc.
+
+
+over the last decade the nature of ml scholarship has changed significantly, with many papers being posted online on archival sites ahead of, or even instead of, submission to peer-reviewed conferences and journal .
+arXiv
+
+it allows papers to be updated, often leading to multiple versions associated with different calendar years, which can result in some ambiguity
+to which one sohuld be cited and for which year.
+
+Math notation:
+vectors: lower case bold
+matrices: upper case bold
+column vectors
+a ⊕ b concatenation of vectors
+
+x ∼ p(x) signifies that x is sampled from the distribution p(x)
+
+deep learning, one particular branch of machine learning, has emerged as an exceptionally powerful and general-purpose framework for learning from data.
+it is based on computational models called neural networks.
+which were originally inspired by mechanism of learning and information processing in the human brain. 
+the field of artificial intelligence, or AI seeks to recreate the powerful capabilities of the brain in machines
+
+many uses are designted to solve very specific and focused problems, while they are extremely useful they fall far short of the tremendous breadth of capabilities of the human brain.
+
+this has led to the introduction of the term artificial general intelligence, or AGI, to desribe the aspiration of building machines with much greater flexibility.
+
+after many decades of steady progress, machine learning has now entered a phase of very rapid development
+
+medical diagnosis:
+melanoma, the most dangerous kind of skin cancer but is curable if detected early.
