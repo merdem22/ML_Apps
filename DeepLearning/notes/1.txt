@@ -31,14 +31,60 @@ x ∼ p(x) signifies that x is sampled from the distribution p(x)
 
 deep learning, one particular branch of machine learning, has emerged as an exceptionally powerful and general-purpose framework for learning from data.
 it is based on computational models called neural networks.
-which were originally inspired by mechanism of learning and information processing in the human brain. 
-the field of artificial intelligence, or AI seeks to recreate the powerful capabilities of the brain in machines
+which were originally inspired by mechanism of learning and information 
 
-many uses are designted to solve very specific and focused problems, while they are extremely useful they fall far short of the tremendous breadth of capabilities of the human brain.
+Difficult for the untrained eye to distinguish bening and malignant melanoma
+melanoma: virtually impossible to write an algorithm by hand, but has been adressed using deep learning. Large set of lesion images.we should focus on the core ideas as the field is evolving rapidly, e.g. LLMs are advancing rapidly yet the underlying transformer architecture and attention mechanism have remained largely unchanged for the last five years.
+an interesting aspect of this application is that the number of labelled training images available roughly 129k is considered relatively small, and so the deep neural net was first trained on a much larger dataset of 1.28 million images of everyday objects (such as dogs, buildings and mushrooms)
+and then fine-tuned on the dataset of lesion images.
 
-this has led to the introduction of the term artificial general intelligence, or AGI, to desribe the aspiration of building machines with much greater flexibility.
+this is an example of transfer learning in which the network learns the general properties of natural images from the large data set of everyday objects and is then specialized to the specific problem of lesion classification.
 
-after many decades of steady progress, machine learning has now entered a phase of very rapid development
+through the use of deep learning, the classification of skin lesion images has reached a level of accuracy that exceeds that of professional dermatologists.
 
-medical diagnosis:
-melanoma, the most dangerous kind of skin cancer but is curable if detected early.
+protein structure:
+one or more long chains of units called amino acids,22 different types, protein is specified by the sequence of amino acids. once a protein has been synthesized inside a living cell, it fodls into a complex 3d shape
+structure whose behaviour and interactions are strongly determined by its shape. calculating this 3d structure has been a fundamental open problem in biology for half a century that had seen relatively little progress
+until the advent of deep learning.
+
+image synthesis:
+unsupervised, training set only consists of images, the goal is to create the images of the same kind. because the images are unlableed.
+
+generative model, a variant of this approach allows images to be generated that depend on an input text string known, as a prompt, so that the image contnet reflects the semantics of the text input.
+the term generative Ai is used to describe learning models that generate output in the form of images, video, audio, text, candidate drug molecules, or other modalities.
+
+large language models:
+processing natural language and other forms of sequential data such as source code. an llm uses deep learning to build rich internal representations that caputre the semantic properties of language.
+an important class of large language models, called autoregressive language models can generate langauge as output, and they are a form of gen Ai.
+
+self supervised learninig in which a function from inputs to outputs is learned but where the labelled outputs are obtained automatically form the input training data without needing separate human derived labels.
+
+noise
+real world data sets, they posses an underlying regularity which we wish to learn, but individual observations are corrupted by random noise. This noise might arise from intrinsically stochastic processes such as radioactive decay but more typically is due to there being sources of variability that are themselves unobserved.
+probability theory provides a framework for expressing such uncertainty in a precise and quantitative manner, whereas decision theory allows us to exploit this probabilistic representation to make predictions that are optimal according to appropriate criteria.
+
+linear models: x could be of order > 2 but it is linear in w. so they are called linear models.
+error functions...
+
+model complexity: model comparison or selection, when we go to a much higher order polynomial we obtain an excellent fit to the training data, however the fitted curve oscillates wildly and gives a very por representation generally over fitting.
+goal is to achieve good generalization by making accurate predictions for new data.
+
+test set, residual value, root mean square error, when we do mean, we have 1/N and it allows us to compare different sizes of data sets on an equal footing, and the square root ensures that E_rms is measured on the same scale and in the same units as the target variable.
+
+for M = 9, the training set error goes to zero, as we might expeect because this polynomial contains 10 degrees of freedom corresponding to the 10 coefficients and can be tuned exactly to the 10 data points in the training set.
+
+with a larger dataset, we can afford to fit a more complex (in other words more flexible) model to the data. 
+one rough heuristic that is sometimes advocated in classical statistics is that the number of data points should be no less than some multiple of the number of learnable params in the model, however excellent results can be obtained using models that have significantly more parameters than the number of training data points.
+
+regualarization
+
+m and lambda are hyperparameters and we can't minimize w.r.t to them because lambda will just be zero and the model will overfit. we therefore need to find a way to determine suitable values for hyperparams. 
+
+how to pick hyperparams, well build many models with different hyperparams and pick the lowest error on the validation set right?
+
+
+but, the supply of data for training and testing will be limited. to build a good model, we should use as much of the available data as possible for training.however if the validation set is too small, it will give a relatively noisy estimate of predictive performance. one solution to this dilemma is to use cross-validaiton.
+s-fold cross validation, taking the available data and partitioning it into s groups of equal size then s-1 of the groups are used to train a set of models that are then evaluated on the remaining group. this procedure is then repeated for all s possible choices for the held-out group, then the performance scores from the s runs are averaged.
+this allows a proportion of s-1/s of the available data to be used for training while making use of all of the data to assess performance. when data is particuarly scarce, it maybe appropriate to consider S = N
+
+heavy reliance is placed on experience obtained with smaller models and on heuristics, for complex models' hyperparameters.
