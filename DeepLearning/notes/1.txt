@@ -88,3 +88,43 @@ s-fold cross validation, taking the available data and partitioning it into s gr
 this allows a proportion of s-1/s of the available data to be used for training while making use of all of the data to assess performance. when data is particuarly scarce, it maybe appropriate to consider S = N
 
 heavy reliance is placed on experience obtained with smaller models and on heuristics, for complex models' hyperparameters.
+
+although perceptrons have long disappeared from practical machine learning, the name lives on because a modern neural network is also sometimes called a multilayer perceptron or mlp.
+
+hidden units, nodes in the middle layer because their values do not appear in the training set.
+
+feed forward neural nets.
+
+params are initialized using a random number generator, and iteratively updated using gradient-based optimization techniques.
+evlauating the derivatives of the error function, which can be done efficiently in a process known as error backpropagation. 
+
+in backpropagation, information flows backwards through the network from the outputs toward the inputs. there exist many different optimization algorithsm that make use of gradients
+of the function to be optimized, but the one that is the most prevalent in ml is also the simplest and is known as stochastic gradient descent.
+
+moving from biological inspiration to a rigorous and principle foundation. probability theory, and ideas from statistics, play a central role.
+one key insight, learning from data involves background assumptions, sometimes called prior knowledge or inductive biases.
+
+these might be incorporated explicitly, for example by designing the structure of a nerual network such that the classification of a skin lesion does not depend on the location of the lesion within the image,
+or they might take the form of implicit assumptions that arise from the mathematical form of the model or the way it is trained.
+
+
+it was observed that in networks with many layers, it was only weights in the final two layers that would learn useful values, with a few exceptions notably models used for image analysis
+known as convolutional neural networks, there were very few successful applications of networks having more than two layers.
+
+feature extraction
+
+halted in the new millenia svms, kernels, gaussian processes....
+
+then second decade of 21st century..
+a series of developments allowed neural networks with many layers of weights to be trained effectively, thereby removing previous limitations on the capabilities of htese techniques.
+they are called deep neural networks and the sub field that focuses on such networks is deep learning.
+
+eventually larger datasets with commensurate scaling of model size and compute supersedes more sophisticated architecture and different inductive biases.
+
+representation learning is a way to think about the hidden layers, semenatically meaningful respresenations for the final layers to solve.
+
+such internal representations can be repurposed to allow for the solution of related problems through transfer learning
+
+large neural networks that can be adapted or fine-tuned to a range of downstream tasks are called foundation models
+
+a downstream task depends on the output of a previous process, so i guess you can chain foundation models?
